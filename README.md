@@ -1,0 +1,1 @@
+/SQL EXERCISE/Image May 22, 2026, 10_37_48 PM.png
