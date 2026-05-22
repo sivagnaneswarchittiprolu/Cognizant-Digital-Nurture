@@ -2,5 +2,5 @@
 select user_id,full_name from users
 where user_id not in(
           select user_id from registratins
-          where registration_date >= (day,90,GETDATE())
+          where registration_date >= (day,-90,GETDATE())
 )
