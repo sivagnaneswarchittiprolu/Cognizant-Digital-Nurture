@@ -1,0 +1,150 @@
+<!-- 9. Geolocation for Event Mapping
+Scenario: Locate the nearest event to the user.
+Objective: Practice geolocation.getCurrentPosition, error handling, and options
+Task:
+• Create a button “Find Nearby Events”
+• On click, use getCurrentPosition to get and display coordinates
+• Handle permission denial and timeouts
+• Use high accuracy options -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocation Example</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 20px;
+        }
+
+        button {
+            padding: 12px 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: darkblue;
+        }
+
+        #location {
+            margin-top: 20px;
+            font-size: 18px;
+            color: green;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h2>Find Nearby Events</h2>
+
+    <!-- Button -->
+    <button onclick="findLocation()">
+        Find Nearby Events
+    </button>
+
+    <!-- Result -->
+    <p id="location"></p>
+
+    <script>
+
+        function findLocation() {
+
+            // Check browser support
+            if(navigator.geolocation) {
+
+                navigator.geolocation.getCurrentPosition(
+
+                    showPosition,
+                    showError,
+
+                    {
+                        enableHighAccuracy: true,
+                        timeout: 5000,
+                        maximumAge: 0
+                    }
+
+                );
+
+            }
+            else {
+
+                document.getElementById("location")
+                    .innerHTML =
+                    "Geolocation is not supported.";
+
+            }
+
+        }
+
+        // Success Function
+        function showPosition(position) {
+
+            let latitude =
+                position.coords.latitude;
+
+            let longitude =
+                position.coords.longitude;
+
+            document.getElementById("location")
+                .innerHTML =
+                "Latitude: " + latitude +
+                "<br>Longitude: " + longitude;
+
+        }
+
+        // Error Handling
+        function showError(error) {
+
+            switch(error.code) {
+
+                case error.PERMISSION_DENIED:
+
+                    document.getElementById("location")
+                        .innerHTML =
+                        "Location permission denied.";
+
+                    break;
+
+                case error.POSITION_UNAVAILABLE:
+
+                    document.getElementById("location")
+                        .innerHTML =
+                        "Location unavailable.";
+
+                    break;
+
+                case error.TIMEOUT:
+
+                    document.getElementById("location")
+                        .innerHTML =
+                        "Request timed out.";
+
+                    break;
+
+                default:
+
+                    document.getElementById("location")
+                        .innerHTML =
+                        "Unknown error occurred.";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
