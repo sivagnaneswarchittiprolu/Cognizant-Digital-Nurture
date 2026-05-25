@@ -1,0 +1,63 @@
+<!-- 3. Welcome Message with Styling and ID/Class
+Scenario: Display a welcome banner styled uniquely for a logged-in user.
+Objective: Practice block/inline tags and differentiate id and class
+Task:
+• Use <div id="welcomeBanner"> and apply a blue background via internal CSS
+• Use inline styles for a special offer <span> (e.g., color red, bold)
+• Apply the .highlight class to certain elements for visual emphasis -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Banner</title>
+
+    <!-- Internal CSS -->
+    <style>
+
+        /* Styling using ID */
+        #welcomeBanner {
+            background-color: blue;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        /* Styling using Class */
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+            padding: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Welcome Banner -->
+    <div id="welcomeBanner">
+        Welcome Back User!
+    </div>
+
+    <br>
+
+    <p>
+        Register today and get
+        <span style="color:red; font-weight:bold;">
+            50% OFF
+        </span>
+        on premium events!
+    </p>
+
+    <p class="highlight">
+        Limited seats available.
+    </p>
+
+    <p class="highlight">
+        Hurry up and register now!
+    </p>
+
+</body>
+</html>
