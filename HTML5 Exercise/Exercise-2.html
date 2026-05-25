@@ -1,0 +1,66 @@
+<!-- 2. Navigation and Linking
+Scenario: Users should navigate between "Home", "Events", and "Contact" sections.
+Objective: Provide intuitive navigation and section-based references.
+Task:
+• Use <nav> with anchor tags <a href="#events">Events</a>
+• Define matching IDs for each section like <section id="events">
+• Add a link to an external help document using <a href="help.html" target="_blank"> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Example</title>
+
+    <style>
+        nav {
+            background-color: lightblue;
+            padding: 10px;
+        }
+
+        nav a {
+            margin-right: 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            margin-top: 50px;
+            padding: 20px;
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#events">Events</a>
+        <a href="#contact">Contact</a>
+
+        <!-- External Link -->
+        <a href="help.html" target="_blank">Help</a>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <h2>Home</h2>
+        <p>Welcome to the community portal.</p>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events">
+        <h2>Events</h2>
+        <p>Check upcoming community events here.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: support@community.com</p>
+    </section>
+
+</body>
+</html>
