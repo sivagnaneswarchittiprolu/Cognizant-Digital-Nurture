@@ -1,0 +1,122 @@
+<!-- 4. Image Gallery for Community Events
+Scenario: Show images from past events in a table layout.
+Objective: Work with <img>, tables, and formatting tags.
+Task:
+• Use a <table> with 2 rows and 3 columns of <img> tags
+• Include alt, title, and style each image with borders using a class
+• Add a caption to describe each event -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Gallery</title>
+
+    <style>
+
+        table {
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .eventImage {
+            width: 200px;
+            height: 150px;
+            border: 4px solid blue;
+            border-radius: 10px;
+        }
+
+        caption {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <table border="1">
+
+        <caption>Community Event Gallery</caption>
+
+        <!-- Row 1 -->
+        <tr>
+
+            <td>
+                <img 
+                    src="event1.jpg"
+                    alt="Music Event"
+                    title="Annual Music Festival"
+                    class="eventImage"
+                >
+                <p>Music Festival</p>
+            </td>
+
+            <td>
+                <img 
+                    src="event2.jpg"
+                    alt="Food Event"
+                    title="Food Carnival"
+                    class="eventImage"
+                >
+                <p>Food Carnival</p>
+            </td>
+
+            <td>
+                <img 
+                    src="event3.jpg"
+                    alt="Sports Event"
+                    title="Sports Competition"
+                    class="eventImage"
+                >
+                <p>Sports Competition</p>
+            </td>
+
+        </tr>
+
+        <!-- Row 2 -->
+        <tr>
+
+            <td>
+                <img 
+                    src="event4.jpg"
+                    alt="Dance Event"
+                    title="Dance Show"
+                    class="eventImage"
+                >
+                <p>Dance Show</p>
+            </td>
+
+            <td>
+                <img 
+                    src="event5.jpg"
+                    alt="Art Event"
+                    title="Art Exhibition"
+                    class="eventImage"
+                >
+                <p>Art Exhibition</p>
+            </td>
+
+            <td>
+                <img 
+                    src="event6.jpg"
+                    alt="Tech Event"
+                    title="Tech Meetup"
+                    class="eventImage"
+                >
+                <p>Tech Meetup</p>
+            </td>
+
+        </tr>
+
+    </table>
+
+</body>
+</html>
