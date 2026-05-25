@@ -2,7 +2,7 @@
 
 select u.full_name as name,
 e.status, 
-count(*) as events_created 
+count(-1) as events_created 
 
 from users as u
 
