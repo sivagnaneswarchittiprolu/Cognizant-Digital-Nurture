@@ -1,0 +1,185 @@
+<!-- 6. Event Feedback with Events Handling
+Scenario: Collect real-time feedback and interactions from the user.
+Objective: Handle blur, change, click, double-click, and keyboard events.
+Task:
+• Use onblur to validate a phone number field
+• Use onchange on a dropdown to display the selected event fee
+• onclick on a submit button to show a confirmation
+• ondblclick on an image to enlarge it
+• Capture key events in the feedback textarea and count characters -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        input,
+        select,
+        textarea,
+        button {
+            display: block;
+            width: 300px;
+            margin-top: 15px;
+            padding: 10px;
+        }
+
+        img {
+            width: 250px;
+            border: 3px solid blue;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #charCount {
+            color: green;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h2>Event Feedback Form</h2>
+
+    <!-- Phone Number -->
+    <input
+        type="text"
+        id="phone"
+        placeholder="Enter phone number"
+        onblur="validatePhone()"
+    >
+
+    <p id="phoneMessage"></p>
+
+    <!-- Event Selection -->
+    <select onchange="showFee()">
+
+        <option value="">
+            Select Event
+        </option>
+
+        <option value="100">
+            Music Event
+        </option>
+
+        <option value="200">
+            Sports Event
+        </option>
+
+        <option value="300">
+            Tech Meetup
+        </option>
+
+    </select>
+
+    <p id="feeDisplay"></p>
+
+    <!-- Feedback -->
+    <textarea
+        id="feedback"
+        rows="5"
+        placeholder="Enter feedback"
+        onkeyup="countCharacters()"
+    ></textarea>
+
+    <p>
+        Characters:
+        <span id="charCount">0</span>
+    </p>
+
+    <!-- Submit Button -->
+    <button onclick="submitForm()">
+        Submit Feedback
+    </button>
+
+    <!-- Image -->
+    <br>
+
+    <img
+        id="eventImage"
+        src="event.jpg"
+        ondblclick="enlargeImage()"
+        alt="Event Image"
+    >
+
+    <script>
+
+        // Validate Phone Number
+        function validatePhone() {
+
+            let phone =
+                document.getElementById("phone").value;
+
+            if(phone.length != 10) {
+
+                document.getElementById("phoneMessage")
+                    .innerHTML =
+                    "Phone number must contain 10 digits";
+
+            }
+            else {
+
+                document.getElementById("phoneMessage")
+                    .innerHTML =
+                    "Valid Phone Number";
+
+            }
+
+        }
+
+        // Display Event Fee
+        function showFee() {
+
+            let select =
+                document.querySelector("select");
+
+            let fee = select.value;
+
+            document.getElementById("feeDisplay")
+                .innerHTML =
+                "Event Fee: ₹" + fee;
+
+        }
+
+        // Submit Confirmation
+        function submitForm() {
+
+            alert("Feedback Submitted Successfully!");
+
+        }
+
+        // Enlarge Image
+        function enlargeImage() {
+
+            let image =
+                document.getElementById("eventImage");
+
+            image.style.width = "400px";
+
+        }
+
+        // Character Counter
+        function countCharacters() {
+
+            let text =
+                document.getElementById("feedback").value;
+
+            document.getElementById("charCount")
+                .innerHTML =
+                text.length;
+
+        }
+
+    </script>
+
+</body>
+</html>
