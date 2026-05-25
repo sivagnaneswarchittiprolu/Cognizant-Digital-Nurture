@@ -1,0 +1,141 @@
+<!-- 8. Saving User Preferences
+Scenario: Store preferred event type for returning users.
+Objective: Work with localStorage, sessionStorage, and deletion
+Task:
+• Save selected event type in localStorage
+• On reload, retrieve and pre-select it
+• Add a "Clear Preferences" button that clears both localStorage and sessionStorage -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Preferences</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        select,
+        button {
+            width: 250px;
+            padding: 10px;
+            margin-top: 15px;
+        }
+
+        #message {
+            color: green;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h2>Choose Your Preferred Event</h2>
+
+    <!-- Dropdown -->
+    <select id="eventType">
+
+        <option value="">
+            Select Event
+        </option>
+
+        <option value="Music Event">
+            Music Event
+        </option>
+
+        <option value="Sports Event">
+            Sports Event
+        </option>
+
+        <option value="Tech Meetup">
+            Tech Meetup
+        </option>
+
+        <option value="Food Carnival">
+            Food Carnival
+        </option>
+
+    </select>
+
+    <br>
+
+    <!-- Save Button -->
+    <button onclick="savePreference()">
+        Save Preference
+    </button>
+
+    <!-- Clear Button -->
+    <button onclick="clearPreferences()">
+        Clear Preferences
+    </button>
+
+    <p id="message"></p>
+
+    <script>
+
+        // Load saved preference when page opens
+        window.onload = function() {
+
+            let savedEvent =
+                localStorage.getItem("preferredEvent");
+
+            if(savedEvent) {
+
+                document.getElementById("eventType")
+                    .value = savedEvent;
+
+                document.getElementById("message")
+                    .innerHTML =
+                    "Saved preference loaded.";
+
+            }
+
+        };
+
+        // Save preference
+        function savePreference() {
+
+            let selectedEvent =
+                document.getElementById("eventType").value;
+
+            // Save in localStorage
+            localStorage.setItem(
+                "preferredEvent",
+                selectedEvent
+            );
+
+            // Save in sessionStorage
+            sessionStorage.setItem(
+                "sessionEvent",
+                selectedEvent
+            );
+
+            document.getElementById("message")
+                .innerHTML =
+                "Preference saved successfully!";
+
+        }
+
+        // Clear storage
+        function clearPreferences() {
+
+            localStorage.clear();
+
+            sessionStorage.clear();
+
+            document.getElementById("message")
+                .innerHTML =
+                "All preferences cleared.";
+
+        }
+
+    </script>
+
+</body>
+</html>
