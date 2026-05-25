@@ -1,0 +1,144 @@
+<!-- 5. Event Registration Form
+Scenario: Residents need to register for events.
+Objective: Practice input types, validation, placeholder, autofocus, and output
+Task:
+• Include fields: name (text), email (email), date (date), event type (select), message
+(textarea)
+• Add placeholder, required, and autofocus
+• Display a confirmation message using <output> when the form is submitted
+• Style the form using CSS -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration Form</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        .form-container {
+            width: 400px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkblue;
+        }
+
+        output {
+            color: green;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+
+        <h2>Event Registration</h2>
+
+        <form onsubmit="showMessage(); return false;">
+
+            <!-- Name -->
+            <input
+                type="text"
+                placeholder="Enter your name"
+                required
+                autofocus
+            >
+
+            <!-- Email -->
+            <input
+                type="email"
+                placeholder="Enter your email"
+                required
+            >
+
+            <!-- Date -->
+            <input
+                type="date"
+                required
+            >
+
+            <!-- Event Type -->
+            <select required>
+
+                <option value="">
+                    Select Event Type
+                </option>
+
+                <option>Music Event</option>
+                <option>Sports Event</option>
+                <option>Tech Meetup</option>
+                <option>Food Carnival</option>
+
+            </select>
+
+            <!-- Message -->
+            <textarea
+                rows="5"
+                placeholder="Enter your message"
+                required
+            ></textarea>
+
+            <!-- Submit Button -->
+            <button type="submit">
+                Register
+            </button>
+
+            <br><br>
+
+            <!-- Output -->
+            <output id="result"></output>
+
+        </form>
+
+    </div>
+
+    <script>
+
+        function showMessage() {
+
+            document.getElementById("result").innerHTML =
+                "Registration Successful!";
+
+        }
+
+    </script>
+
+</body>
+</html>
