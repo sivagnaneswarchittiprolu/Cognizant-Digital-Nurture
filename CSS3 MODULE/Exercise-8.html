@@ -1,0 +1,79 @@
+<!-- # 8. Box Model & Layout Control -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Box Model and Layout Control</title>
+
+    <style>
+
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        h1{
+            text-align: center;
+            color: darkblue;
+            margin-bottom: 20px;
+        }
+
+        .eventCard{
+            background-color: white;
+            border: 3px solid black;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        input:focus{
+            outline: 3px solid blue;
+        }
+
+        .hiddenBox{
+            visibility: hidden;
+            background-color: lightcoral;
+            padding: 15px;
+            margin-top: 10px;
+        }
+
+        .noneBox{
+            display: none;
+            background-color: lightgreen;
+            padding: 15px;
+            margin-top: 10px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <h1>Community Event Portal</h1>
+
+    <div class="eventCard">
+
+        <h2>Community Meetup</h2>
+
+        <p>
+            This event card demonstrates the CSS Box Model
+            using border, padding, and margin properties.
+        </p>
+
+    </div>
+
+    <h2>Registration Form</h2>
+
+    <input type="text" placeholder="Enter your name">
+
+    <div class="hiddenBox">
+        This box is hidden using visibility:hidden
+    </div>
+
+    <div class="noneBox">
+        This box is hidden using display:none
+    </div>
+
+</body>
+</html>
