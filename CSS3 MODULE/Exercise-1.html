@@ -1,0 +1,44 @@
+// # 1. Why CSS? Inline vs Internal vs External
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Community Event Portal</title>
+
+    <!-- Internal CSS using style tag -->
+    <style>
+
+        body{
+            background-color: lightgray;
+            font-family: Arial, sans-serif;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        .eventCard{
+            border: 2px solid black;
+            padding: 15px;
+            margin: 20px;
+            background-color: white;
+        }
+
+    </style>
+
+    <!-- External CSS File -->
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+    <!-- Inline CSS -->
+    <h1 style="color:red;">Welcome to Local Community Event Portal</h1>
+
+    <div class="eventCard">
+        <h2>Music Festival</h2>
+        <p>Enjoy music, food, and fun activities.</p>
+    </div>
+
+</body>
+</html>
