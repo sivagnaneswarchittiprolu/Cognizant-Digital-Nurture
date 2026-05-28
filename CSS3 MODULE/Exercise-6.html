@@ -1,0 +1,94 @@
+<!-- # 6. Link and List Styling -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Link and List Styling</title>
+
+    <style>
+
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        h1{
+            text-align: center;
+            color: darkblue;
+        }
+
+        a:link{
+            color: blue;
+            text-decoration: none;
+        }
+
+        a:visited{
+            color: purple;
+        }
+
+        a:hover{
+            color: red;
+            text-decoration: underline;
+        }
+
+        a:active{
+            color: green;
+        }
+
+        nav ul{
+            list-style: none;
+            background-color: #333;
+            padding: 10px;
+        }
+
+        nav ul li{
+            display: inline;
+            margin-right: 20px;
+            padding: 5px;
+        }
+
+        nav ul li a{
+            color: white;
+            font-weight: bold;
+        }
+
+        .eventList{
+            list-style-type: square;
+            list-style-position: inside;
+            margin-top: 20px;
+        }
+
+        .eventList li{
+            padding: 10px;
+            margin: 5px 0;
+            background-color: white;
+            border-radius: 5px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <h1>Community Event Portal</h1>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <h2>Upcoming Events</h2>
+
+    <ul class="eventList">
+        <li>Music Concert</li>
+        <li>Food Festival</li>
+        <li>Art Exhibition</li>
+    </ul>
+
+</body>
+</html>
+
